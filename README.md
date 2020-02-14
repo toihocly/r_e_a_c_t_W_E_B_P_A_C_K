@@ -16,6 +16,14 @@ Webpack > 4.
 
     App => Component A => Component B and Component C
 
+## Usage
+
+- Clone Project
+
+- npm install
+
+- npm run start
+
 ## Start
 
     npm run start
