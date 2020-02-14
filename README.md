@@ -38,13 +38,13 @@ Webpack > 4.
 
 ## Extended information
 
-learn config Scripts in package.json
+learn config **Scripts** in **package.json**
 
-npm install --save-dev ~ npm i -D : all package in devDependencies will not install and run in production
+**npm install --save-dev ~ npm i -D** : all package in devDependencies will not install and run in production
 
-npm install --save ~ npm i : all packages in dependencies will install and run in production
+**npm install --save ~ npm i** : all packages in dependencies will install and run in production
 
-file-loader and url-loader
+**file-loader** and **url-loader**
 
 file-loader => use image => webpack build => image => take time (x ms) when call image in browser
 
@@ -54,10 +54,10 @@ ulr-loader => use image => webpack build => BASE64 => not take time (0 ms) when 
 
     ulr-loader seems a bit better
 
-MiniCssExtractPlugin
+**MiniCssExtractPlugin**
 
 customize css to min.css some thing like this
 
-HtmlWebPackPlugin
+**HtmlWebPackPlugin**
 
 read your html file and handle it
