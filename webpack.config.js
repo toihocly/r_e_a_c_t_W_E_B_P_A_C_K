@@ -1,19 +1,24 @@
 const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const TerserPlugin = require("terser-webpack-plugin"); // minimize file javascript
+const TerserPlugin = require("terser-webpack-plugin"); // minimize file javascript for version old
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin"); // minimize file css
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = (env, options) => {
   return {
+    entry: "./src/index.js",
+
     output: {
-      path: path.resolve(__dirname, "dist"),
-      filename: "bundle.js",
-      publicPath: "/assets"
+      path: path.join(__dirname, "dist"),
+      filename: "js/[name].bundle.js"
     },
     optimization: {
       minimize: true,
-      minimizer: [new TerserPlugin(), new OptimizeCSSAssetsPlugin()]
+      minimizer: [
+        new TerserPlugin({ sourceMap: true }),
+        new OptimizeCSSAssetsPlugin()
+      ]
     },
     module: {
       rules: [
@@ -68,12 +73,16 @@ module.exports = (env, options) => {
             }
           ]
         },
-        // file-loader image
+        //file-loader image
         // {
         //   test: /\.(png|jpe?g|gif)$/i,
         //   use: [
         //     {
-        //       loader: "file-loader"
+        //       loader: "file-loader",
+        //       options: {
+        //         outputPath: "images",
+        //         name: "[name].[ext]"
+        //       }
         //     }
         //   ]
         // },
@@ -95,7 +104,7 @@ module.exports = (env, options) => {
               loader: "file-loader",
               options: {
                 // có 2 cách [config ***] file: 1 là dùng outPath và name | 2 là dùng name như ở dưới cho tiện
-                outputPath: "assets/fonts",
+                outputPath: "fonts",
                 name: "[name].[ext]"
                 // [config ***] dùng  [opntion name] để quản lý được các tập tin sẽ đặt ở đau sau khi load
                 // name: 'image/[name].[ext]',
@@ -111,6 +120,7 @@ module.exports = (env, options) => {
       port: 9000
     },
     plugins: [
+      new CleanWebpackPlugin(),
       new HtmlWebPackPlugin({
         template: "./src/index.html",
         filename: "./index.html"
@@ -118,8 +128,8 @@ module.exports = (env, options) => {
       new MiniCssExtractPlugin({
         // Options similar to the same options in webpackOptions.output
         // all options are optional
-        filename: "assets/css/[name].css",
-        chunkFilename: "assets/css/[id].css",
+        filename: "css/[name].css",
+        chunkFilename: "css/[id].css",
         ignoreOrder: false // Enable to remove warnings about conflicting order
       })
     ]
