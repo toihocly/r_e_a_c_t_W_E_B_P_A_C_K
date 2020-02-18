@@ -10,7 +10,7 @@ Webpack > 4.
 
 ## List config includes:
 
-    Webpack, Images, Fonts, Css, Sass, Jest, Label,
+       Webpack, Images, Fonts, Css, Sass, Jest, Label, FontAwesome
 
 ## Structure
 
@@ -46,9 +46,9 @@ learn config **Scripts** in **package.json**
 
 **file-loader** and **url-loader**
 
-file-loader => use image => webpack build => image => take time (x ms) when call image in browser
+> file-loader => use image => webpack build => image => take time (x ms) when call image in browser
 
-ulr-loader => use image => webpack build => BASE64 => not take time (0 ms) when call image in browser
+> ulr-loader => use image => webpack build => BASE64 => not take time (0 ms) when call image in browser
 
     Whichever you like, choose that one ^^^^^
 
@@ -56,8 +56,12 @@ ulr-loader => use image => webpack build => BASE64 => not take time (0 ms) when 
 
 **MiniCssExtractPlugin**
 
-customize css to min.css some thing like this
+> customize css to min.css some thing like this
 
 **HtmlWebPackPlugin**
 
-read your html file and handle it
+> read your html file and handle it
+
+**LINK**
+
+> [research icon in font awesome](https://fontawesome.com/icons?d=gallery&m=free)
