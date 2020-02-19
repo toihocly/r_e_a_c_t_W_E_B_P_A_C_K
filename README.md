@@ -10,7 +10,7 @@ Webpack > 4.
 
 ## List config includes:
 
-       Webpack, Images, Fonts, Css, Sass, Jest, Label, FontAwesome
+       Webpack, Images, Fonts, Css, Sass, Jest, Label, FontAwesome , Bootstrap
 
 ## Structure
 
@@ -61,6 +61,10 @@ learn config **Scripts** in **package.json**
 **HtmlWebPackPlugin**
 
 > read your html file and handle it
+
+**TerserPlugin**
+
+> read your javascript file and handle it
 
 **LINK**
 

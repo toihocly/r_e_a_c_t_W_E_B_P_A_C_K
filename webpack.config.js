@@ -8,10 +8,10 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 module.exports = (env, options) => {
   return {
     entry: {
+      bootstrap: "./src/assets/js/bootstrap_config.js",
       fontsawesome: "./src/assets/js/fontsawesome_config.js",
       main: "./src/index.js"
     },
-
     output: {
       path: path.join(__dirname, "dist"),
       filename: "js/[name].bundle.js"
@@ -19,8 +19,20 @@ module.exports = (env, options) => {
     optimization: {
       minimize: true,
       minimizer: [
-        new TerserPlugin({ sourceMap: true }),
-        new OptimizeCSSAssetsPlugin()
+        new TerserPlugin({
+          terserOptions: {
+            output: {
+              comments: false
+            }
+          },
+          extractComments: false,
+          sourceMap: true
+        }),
+        new OptimizeCSSAssetsPlugin({
+          cssProcessorPluginOptions: {
+            preset: ["default", { discardComments: { removeAll: true } }]
+          }
+        })
       ]
     },
     module: {
@@ -126,7 +138,12 @@ module.exports = (env, options) => {
       new CleanWebpackPlugin(),
       new HtmlWebPackPlugin({
         template: "./src/index.html",
-        filename: "./index.html"
+        filename: "./index.html",
+        minify: {
+          removeAttributeQuotes: true,
+          collapseWhitespace: true,
+          removeComments: true
+        }
       }),
       new MiniCssExtractPlugin({
         // Options similar to the same options in webpackOptions.output
