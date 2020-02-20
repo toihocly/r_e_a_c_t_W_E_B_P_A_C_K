@@ -7,8 +7,10 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = (env, options) => {
   return {
-    entry: "./src/index.js",
-
+    entry: {
+      bootstrap: "./src/assets/js/bootstrap_config.js",
+      main: "./src/index.js"
+    },
     output: {
       path: path.join(__dirname, "dist"),
       filename: "js/[name].bundle.js"
