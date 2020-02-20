@@ -14,7 +14,7 @@ module.exports = (env, options) => {
     },
     output: {
       path: path.join(__dirname, "dist"),
-      filename: "js/[name].bundle.js"
+      filename: "js/[contenthash].bundle.js"
     },
     optimization: {
       minimize: true,
@@ -148,8 +148,8 @@ module.exports = (env, options) => {
       new MiniCssExtractPlugin({
         // Options similar to the same options in webpackOptions.output
         // all options are optional
-        filename: "css/[name].css",
-        chunkFilename: "css/[id].css",
+        filename: "css/[contenthash].css",
+        chunkFilename: "css/[contenthash].css",
         ignoreOrder: false // Enable to remove warnings about conflicting order
       })
     ]
