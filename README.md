@@ -69,3 +69,7 @@ learn config **Scripts** in **package.json**
 **LINK**
 
 > [research icon in font awesome](https://fontawesome.com/icons?d=gallery&m=free)
+
+**resolve**
+
+> import Utility from '../../utilities/utility'; after configuration import Utility from 'Utilities/utility'; very cool

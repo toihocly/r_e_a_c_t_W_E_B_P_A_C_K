@@ -1,0 +1,20 @@
+.root {
+  .filter {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+    margin-bottom: 20px;
+    border-bottom: 2px dotted lightcoral;
+    li {
+      padding: 8px 10px;
+      &:active,
+      &:hover {
+        color: lightblue;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+  }
+}

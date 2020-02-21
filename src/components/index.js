@@ -1,3 +1,2 @@
-export * from "./ComponentA";
-export * from "./ComponentB";
-export * from "./ComponentC";
+export * from './button';
+export * from './input';

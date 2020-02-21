@@ -16,6 +16,12 @@ module.exports = (env, options) => {
       path: path.join(__dirname, 'dist'),
       filename: 'js/[contenthash].bundle.js',
     },
+    resolve: {
+      alias: {
+        Components: path.resolve(__dirname, 'src/components'),
+        Views: path.resolve(__dirname, 'src/views'),
+      },
+    },
     optimization: {
       minimize: true,
       minimizer: [
