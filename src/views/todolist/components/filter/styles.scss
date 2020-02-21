@@ -15,6 +15,9 @@
         text-decoration: none;
         cursor: pointer;
       }
+      &.active {
+        border-bottom: 5px solid lightcoral;
+      }
     }
   }
 }

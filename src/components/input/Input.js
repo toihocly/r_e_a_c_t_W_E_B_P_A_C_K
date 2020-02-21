@@ -7,7 +7,7 @@ const Input = ({ className, ...rest }) => {
 
   return (
     <div className="form-group">
-      <label for="input">New Word</label>
+      <label htmlFor="input">New Word</label>
       <input
         type="text"
         className={newClass}

@@ -6,18 +6,21 @@
       align-items: center;
 
       span {
-        flex: 100px 0 1;
-        &.backlog,
-        &inprogress {
+        &.backlog {
           &:hover {
             text-decoration: underline lightgreen;
           }
         }
+        &.inprogress {
+          color: lightseagreen;
+        }
         &.done {
+          color: lightslategray;
           text-decoration: line-through;
         }
       }
       .icon {
+        margin-left: 20px;
         cursor: pointer;
         &:active,
         &:hover {

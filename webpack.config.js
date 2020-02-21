@@ -17,6 +17,7 @@ module.exports = (env, options) => {
       filename: 'js/[contenthash].bundle.js',
     },
     resolve: {
+      modules: [path.resolve(__dirname, './src'), 'node_modules'],
       alias: {
         Components: path.resolve(__dirname, 'src/components'),
         Views: path.resolve(__dirname, 'src/views'),
